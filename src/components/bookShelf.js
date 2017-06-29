@@ -8,7 +8,7 @@ const bookBuilder = (book, index, props) => {
         bookId={book.id}
         cover={book.imageLinks.smallThumbnail}
         title={book.title}
-        authors={book.authors.join(', ')}
+        authors={book.authors}
         handleAction={action => props.handleAction(book, action)}
         book={book}
         />

@@ -22,8 +22,6 @@ class Home extends Component {
   }
 
   updateBook(book, action) {
-    console.log('book:', book)
-    console.log('action:', action)
     BooksAPI.update(book, action).then(
       res => {
         const newBooksState = this.state.books.map(

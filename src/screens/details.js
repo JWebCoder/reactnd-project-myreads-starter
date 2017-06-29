@@ -28,12 +28,18 @@ class Home extends Component {
     if (book) {
       return (
         <div>
-          <SubTitle title={book.title} to='/'/>
+          <SubTitle title={book.title} back subtitle={book.subtitle} history={this.props.history}/>
           <div className='book-details'>
             <div className='left'>
               <img className='book-image' alt={book.title} src={book.imageLinks.thumbnail.replace('zoom=1', 'zoom=2')}/>
               <div className='preview-container'>
                 <a className='button' href={book.previewLink}>Preview book</a>
+              </div>
+              <div className='authors'>
+                <h3>Authors</h3>
+                {book.authors.map(
+                  (author, index) => <p key={index}>{author}</p>
+                )}
               </div>
             </div>
             <div className='right'>

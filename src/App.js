@@ -15,7 +15,11 @@ class BooksApp extends Component {
       <div className='app'>
         <Header/>
         <Route exact path='/' render={
-          () => <Home/>
+          () => {
+            localStorage.removeItem('searchText')
+            localStorage.removeItem('searchResults')
+            return <Home/>
+          }
         }/>
         <Route exact path='/search' render={
           () => (

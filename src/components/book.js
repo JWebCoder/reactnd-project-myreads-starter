@@ -23,7 +23,11 @@ const Book = props => (
         <div className="book-cover" style={{width: 128, height: 193, backgroundImage: `url("${props.cover}")` }}></div>
       </div>
       <div className="book-title">{props.title}</div>
-      <div className="book-authors">{props.authors}</div>
+      <div className="book-authors">
+        {props.authors && props.authors.length > 0 && props.authors.map(
+          (author, index) => <p key={index}>{author}</p>
+        )}
+      </div>
     </Link>
   </div>
 )

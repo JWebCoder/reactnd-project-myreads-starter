@@ -27,6 +27,16 @@ body, .app {
   border-bottom: 1px solid rgba(0,0,0,.2);
 }
 
+.sub-title .title-name {
+  margin: 10px 0 10px 20px;
+}
+
+.sub-title .title-name h2,
+.sub-title .title-name p {
+  margin: 0;
+
+}
+
 /* main page */
 .list-books-content {
   padding: 0 0 80px;
@@ -71,8 +81,12 @@ body, .app {
 
 /* search page */
 
+.search-books {
+  position: relative;
+}
+
 .search-books-bar {
-  position: fixed;
+  position: absolute;
   width: 100%;
   top: 0;
   left: 0;
@@ -108,6 +122,8 @@ body, .app {
 
 .search-books-results {
   padding: 80px 10px 20px;
+  max-height: calc(100% - 125px);
+  overflow: auto;
 }
 
 /* books grid */
@@ -143,6 +159,9 @@ body, .app {
 }
 .book-authors {
   color: #999;
+}
+.book-authors p {
+  margin: 0;
 }
 
 .book-top {
@@ -214,6 +233,13 @@ body, .app {
 
 .book-details .book-image {
   display: block;
+}
+
+.book-details .authors h2 {
+  margin: 20px 0 0;
+}
+.book-details .authors p {
+  margin-top: 0;
 }
 
 /* elements */

@@ -1,10 +1,14 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 
-const SubTitle = ({title, to}) => (
-  <div className="sub-title">
-    <Link className="close-search" to={to}>Close</Link>
-    <h2>{title}</h2>
+const SubTitle = ({title, history, subtitle}) => (
+  <div className='sub-title'>
+    <a className='close-search' onClick={() => {history.goBack()}}>Close</a>
+    <div className='title-name'>
+      <h2>{title}</h2>
+      {subtitle && (
+        <p>{subtitle}</p>
+      )}
+    </div>
   </div>
 )
 
