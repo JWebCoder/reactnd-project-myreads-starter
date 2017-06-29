@@ -8,19 +8,26 @@ body, .app {
   background: white;
 }
 
-/* main page */
-
-.list-books-title {
+.header {
   padding: 10px 0;
-  background: #2e7c31;
+  background: #43A047;
   text-align: center;
 }
-.list-books-title h1 {
+
+.header h1 {
   font-weight: 400;
   margin: 0;
   color: white;
 }
 
+.sub-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+}
+
+/* main page */
 .list-books-content {
   padding: 0 0 80px;
   flex: 1;
@@ -53,7 +60,7 @@ body, .app {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #2e7d32;
+  background: #43A047;
   background-image: url('./icons/add.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -121,12 +128,17 @@ body, .app {
 
 .book {
   width: 140px;
+  position: relative;
+}
+.book .book-link {
+  text-decoration: none;
 }
 .book-title,
 .book-authors {
   font-size: 0.8em;
 }
 .book-title {
+  color: black;
   margin-top: 10px;
 }
 .book-authors {
@@ -143,16 +155,17 @@ body, .app {
 .book-shelf-changer {
   position: absolute;
   right: 0;
-  bottom: -10px;
+  top: 170px;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #60ac5d;
+  background: #43A047;
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 20px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  z-index: 1;
 }
 .book-shelf-changer select {
   width: 100%;
@@ -171,4 +184,46 @@ body, .app {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
+}
+
+/* book details */
+
+.book-details {
+  display: flex;
+  margin-top: 40px;
+  justify-content: center;
+}
+
+.book-details .right {
+  margin-left: 40px;
+  max-width: 50%;
+}
+
+.boook-details h2 {
+  margin-top: 0;
+}
+
+.book-details .description {
+  margin-top: 0;
+}
+
+.book-details .preview-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.book-details .book-image {
+  display: block;
+}
+
+/* elements */
+
+.button {
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background-color: #43A047;
+  padding: 7px 20px;
+  border-radius: 2px;
 }
