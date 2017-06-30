@@ -1,20 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Book from './book'
 
-const bookBuilder = (book, index, props) => {
-  return (
-    <li key={index}>
-      <Book
-        bookId={book.id}
-        cover={book.imageLinks.smallThumbnail}
-        title={book.title}
-        authors={book.authors}
-        handleAction={action => props.handleAction(book, action)}
-        book={book}
-        />
-    </li>
-  )
-}
+const bookBuilder = (book, index, props) => (
+  <li key={index}>
+    <Book
+      bookId={book.id}
+      cover={book.imageLinks.smallThumbnail}
+      title={book.title}
+      authors={book.authors}
+      handleAction={action => props.handleAction(book, action)}
+      book={book}
+      />
+  </li>
+)
 
 const BookShelf = props => (
   <div className="bookshelf">
@@ -32,5 +31,10 @@ const BookShelf = props => (
     </div>
   </div>
 )
+
+BookShelf.propTypes = {
+  title: PropTypes.string.isRequired,
+  books: PropTypes.array
+}
 
 export default BookShelf

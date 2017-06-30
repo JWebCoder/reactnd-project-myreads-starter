@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {Link} from 'react-router-dom'
 
 const Book = props => (
@@ -23,13 +24,24 @@ const Book = props => (
         <div className="book-cover" style={{width: 128, height: 193, backgroundImage: `url("${props.cover}")` }}></div>
       </div>
       <div className="book-title">{props.title}</div>
-      <div className="book-authors">
-        {props.authors && props.authors.length > 0 && props.authors.map(
-          (author, index) => <p key={index}>{author}</p>
-        )}
-      </div>
+      {props.authors && props.authors.length > 0 && (
+        <div className="book-authors">
+          {props.authors.map(
+            (author, index) => <p key={index}>{author}</p>
+          )}
+        </div>
+      )}
     </Link>
   </div>
 )
+
+Book.propTypes = {
+  title: PropTypes.string.isRequired,
+  bookId: PropTypes.string.isRequired,
+  cover: PropTypes.string.isRequired,
+  handleAction: PropTypes.func.isRequired,
+  book: PropTypes.object.isRequired,
+  authors: PropTypes.array
+}
 
 export default Book

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const SubTitle = ({title, history, subtitle}) => (
   <div className='sub-title'>
@@ -11,5 +12,11 @@ const SubTitle = ({title, history, subtitle}) => (
     </div>
   </div>
 )
+
+SubTitle.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
+  history: PropTypes.object.isRequired
+}
 
 export default SubTitle

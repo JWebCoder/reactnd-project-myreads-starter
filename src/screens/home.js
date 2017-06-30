@@ -44,7 +44,7 @@ class Home extends Component {
     const {books} = this.state
 
     return (
-      <div className="list-books">
+      <div className="page list-books">
         <div className="list-books-content">
           <BookShelf
             title='Currently Reading'

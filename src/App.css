@@ -12,6 +12,11 @@ body, .app {
   padding: 10px 0;
   background: #43A047;
   text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
 }
 
 .header h1 {
@@ -24,7 +29,13 @@ body, .app {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  border-bottom: 1px solid rgba(0,0,0,.2);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 0 6px rgba(0,0,0,0.23);
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  background-color: white;
+  height: 81px;
 }
 
 .sub-title .title-name {
@@ -34,26 +45,32 @@ body, .app {
 .sub-title .title-name h2,
 .sub-title .title-name p {
   margin: 0;
+}
 
+.page {
+  position: fixed;
+  top: 68px;
+  left: 0;
+  right: 0;
+  max-height: calc(100% - 68px);
+  overflow: auto;
+  padding: 40px 20px 20px;
 }
 
 /* main page */
-.list-books-content {
-  padding: 0 0 80px;
-  flex: 1;
-}
 
 .bookshelf {
-  padding: 0 10px 20px;
+  padding: 0 0 20px;
 }
 
 @media (min-width: 600px) {
   .bookshelf {
-    padding: 0 20px 40px;
+    padding: 0 0 40px;
   }
 }
 
 .bookshelf-title {
+  margin-top: 0;
   border-bottom: 1px solid #dedede;
 }
 .bookshelf-books {
@@ -82,13 +99,14 @@ body, .app {
 /* search page */
 
 .search-books {
-  position: relative;
+  top: 121px;
+  max-height: calc(100% - 121px);
 }
 
 .search-books-bar {
-  position: absolute;
+  position: fixed;
   width: 100%;
-  top: 0;
+  top: 68px;
   left: 0;
   z-index: 5;
   display: flex;
@@ -120,12 +138,6 @@ body, .app {
   font-size: 0;
 }
 
-.search-books-results {
-  padding: 80px 10px 20px;
-  max-height: calc(100% - 125px);
-  overflow: auto;
-}
-
 /* books grid */
 
 .books-grid {
@@ -138,7 +150,7 @@ body, .app {
   flex-wrap: wrap;
 }
 .books-grid li {
-  padding: 10px 15px;
+  padding: 0px 15px 20px;
   text-align: left;
 }
 
@@ -209,13 +221,19 @@ body, .app {
 
 .book-details {
   display: flex;
-  margin-top: 40px;
+  top: 149px;
   justify-content: center;
+  max-height: calc(100% - 149px);
 }
 
 .book-details .right {
   margin-left: 40px;
   max-width: 50%;
+}
+
+.book-details .left,
+.book-details .right {
+  height: 100%;
 }
 
 .boook-details h2 {
@@ -235,11 +253,20 @@ body, .app {
   display: block;
 }
 
-.book-details .authors h2 {
+.book-details .list h3 {
   margin: 20px 0 0;
 }
-.book-details .authors p {
+.book-details .list ul,
+.book-details .list p {
   margin-top: 0;
+}
+
+.book-details .list ul {
+  padding-left: 30px;
+}
+
+.book-details .list p {
+  padding-left: 14px;
 }
 
 /* elements */
