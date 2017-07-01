@@ -5,13 +5,13 @@ import * as BooksAPI from '../BooksAPI'
 import Book from '../components/book'
 
 class Search extends Component {
+  state = {
+    text: localStorage.getItem('searchText') || '',
+    books: []
+  }
+
   constructor() {
     super()
-    this.state = {
-      text: localStorage.getItem('searchText') || '',
-      books: []
-    }
-
     this.submitText = _.debounce(this.submitText, 500)
   }
 

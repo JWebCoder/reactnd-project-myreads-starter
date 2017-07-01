@@ -4,11 +4,8 @@ import BookShelf from '../components/bookShelf'
 import * as BooksAPI from '../BooksAPI'
 
 class Home extends Component {
-  constructor() {
-    super()
-    this.state = {
-      books: []
-    }
+  state = {
+    books: []
   }
 
   componentDidMount() {

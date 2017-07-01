@@ -3,11 +3,8 @@ import SubTitle from '../components/subTitle'
 import * as BooksAPI from '../BooksAPI'
 
 class Details extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      book: undefined
-    }
+  state = {
+    book: {}
   }
 
   getBook(id) {
@@ -23,7 +20,7 @@ class Details extends Component {
   render() {
     const book = this.props.location.state || this.state.book
 
-    if (book) {
+    if (book && book.id) {
       return (
         <div>
           <SubTitle title={book.title} back subtitle={book.subtitle} history={this.props.history}/>
